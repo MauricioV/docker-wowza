@@ -30,8 +30,8 @@ check_and_install_wowza() {
   fi
 
   # setting up licences
-  echo "${WOWZA_KEY}" > /usr/local/WowzaStreamingEngine/conf/Server.license
-  sed -i "s/xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxxxxxx/${WOWZA_KEY}/g" /app/interaction.exp
+  #echo "${WOWZA_KEY}" > /usr/local/WowzaStreamingEngine/conf/Server.license
+  #sed -i "s/xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxxxxxx/${WOWZA_KEY}/g" /app/interaction.exp
 
   # install Wowza
   /app/interaction.exp
