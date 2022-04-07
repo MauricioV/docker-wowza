@@ -1,13 +1,26 @@
-Wowza:
-  image: sameersbn/wowza:4.1.2-8
-  environment:
-    - WOWZA_ACCEPT_LICENSE=yes
-    - WOWZA_KEY=
-  ports:
-    - "1935:1935"
-    - "8086:8086"
-    - "8087:8087"
-    - "8088:8088"
-  volumes:
-    - /srv/docker/wowza/data:/var/lib/wowza
-    - /srv/docker/wowza/log:/var/log/wowza
+version: '3'
+services:
+  wowza:
+    build: ./wowza
+    image: docker_wowza
+    container_name: wowza
+    environment:
+      - WOWZA_ACCEPT_LICENSE=yes
+      - WOWZA_KEY= ${WOWZA_KEY}
+    ports:
+      - "1935:1935"
+      - "8086:8086"
+      - "8087:8087"
+      - "8088:8088"
+      - "23:22"
+    volumes:
+      - /srv/docker/wowza/data:/var/lib/wowza
+      - /srv/docker/wowza/log:/var/log/wowza
+    networks:
+      default:
+        ipv4_address: ${WOWZA_IP}
+networks:
+  default:
+    external:
+      name: docker_open5gs_default
+
