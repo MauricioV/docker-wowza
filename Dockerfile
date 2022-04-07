@@ -15,6 +15,11 @@ RUN /app/prepare.sh
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
+COPY hosts /etc/
+COPY wms-server.jar /root/
+COPY updateavailablejava_tag.class /root/
+COPY updateavailable_tag.class /root/
+
 EXPOSE 1935/tcp 8086/tcp 8087/tcp 8088/tcp
 VOLUME ["${WOWZA_DATA_DIR}", "${WOWZA_LOG_DIR}"]
 ENTRYPOINT ["/sbin/entrypoint.sh"]
