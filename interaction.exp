@@ -12,7 +12,7 @@ expect {
 send -- "\ry\r"
 
 expect -gl "*License Key*"
-send -- "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxxxxxx\r"
+send -- "ET1A4-KxrGd-Eaj9T-dTbcf-rZNza-9xaJd\r"
 
 expect -gl "*User Name*"
 send -- "admin\r"
