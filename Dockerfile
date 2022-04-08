@@ -1,7 +1,6 @@
-FROM sameersbn/ubuntu:14.04.20170123
-MAINTAINER sameer@damagehead.com
+FROM ubuntu:focal as builder
 
-ENV WOWZA_VERSION=4.3.0 \
+ENV WOWZA_VERSION=4.8.17+1 \
     WOWZA_DATA_DIR=/var/lib/wowza \
     WOWZA_LOG_DIR=/var/log/wowza
 
